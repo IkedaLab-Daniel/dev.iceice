@@ -3,7 +3,9 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const cors = require('cors');
 const connectDB = require('./config/database');
-const authRoutes = require('./routes/authRoutes')
+const authRoutes = require('./routes/authRoutes');
+const recordRoutes = require('./routes/recordRoutes');
+const { errorHandler } = require('./middlewares/errorMiddleware');
 dotenv.config()
 
 app = express();
@@ -14,11 +16,15 @@ app.use(morgan('dev'));
 
 // > Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/records', recordRoutes);
 
-// Health check route
+// > Health check route
 app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'Server is running' });
 });
+
+// > Error handling middleware
+app.use(errorHandler)
 
 app.listen(process.env.PORT || 5000, () => {
     connectDB();

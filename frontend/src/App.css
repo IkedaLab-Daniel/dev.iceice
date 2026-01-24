@@ -1,6 +1,6 @@
 .page {
   min-height: 100vh;
-  background: radial-gradient(circle at 50% 0%, rgba(80, 156, 255, 0.25), transparent 45%),
+  background: radial-gradient(circle at 50% 0%, rgba(80, 156, 255, 0.01), transparent 90%),
     linear-gradient(180deg, #0b121a 0%, #0a0f16 100%);
   color: #f4f7fb;
   position: relative;

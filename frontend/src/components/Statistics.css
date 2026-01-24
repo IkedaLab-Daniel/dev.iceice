@@ -1,7 +1,7 @@
 .statistics {
   position: relative;
   z-index: 1;
-  padding: 48px 8vw 96px;
+  padding: 48px 8vw 0px 8vw;
 }
 
 .stats-container {
@@ -20,7 +20,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 24px;
-  margin-bottom: 48px;
 }
 
 .stat-card {
@@ -128,7 +127,7 @@
 
 @media (max-width: 768px) {
   .statistics {
-    padding: 0px 20px 36px;
+    padding: 0px 20px 0px 20px;
   }
 
   .stats-grid {

@@ -1,0 +1,238 @@
+.records {
+  position: relative;
+  z-index: 1;
+  padding: 20px 8vw 96px 8vw;
+}
+
+.records-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.records-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: #6bb5ff;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background: rgba(18, 27, 38, 0.85);
+  border: 1px solid rgba(84, 125, 163, 0.35);
+  border-radius: 999px;
+  color: rgba(198, 217, 236, 0.7);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.filter-btn:hover {
+  border-color: rgba(107, 181, 255, 0.5);
+  color: #6bb5ff;
+}
+
+.filter-btn.active {
+  background: rgba(107, 181, 255, 0.15);
+  border-color: rgba(107, 181, 255, 0.6);
+  color: #6bb5ff;
+  font-weight: 600;
+}
+
+.records-count {
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(198, 217, 236, 0.6);
+  margin-bottom: 24px;
+}
+
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.record-card {
+  background: rgba(18, 27, 38, 0.85);
+  border: 1px solid rgba(84, 125, 163, 0.35);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 12px 22px rgba(6, 12, 20, 0.6);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.record-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(107, 181, 255, 0.5);
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.record-day {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f4f7fb;
+}
+
+.record-duration {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(107, 181, 255, 0.8);
+  background: rgba(107, 181, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(107, 181, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.record-date {
+  font-size: 0.875rem;
+  color: rgba(198, 217, 236, 0.6);
+  font-weight: 500;
+}
+
+.record-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topic-tag {
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  background: rgba(12, 27, 44, 0.7);
+  border: 1px solid rgba(67, 139, 209, 0.4);
+  border-radius: 999px;
+  color: #7cb8ff;
+  letter-spacing: 0.05rem;
+  font-weight: 500;
+}
+
+.record-description {
+  font-size: 0.9rem;
+  color: rgba(196, 212, 230, 0.8);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.record-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: #6bb5ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  margin-top: auto;
+}
+
+.record-link:hover {
+  color: #8ec9ff;
+  text-decoration: underline;
+}
+
+.no-records {
+  text-align: center;
+  padding: 64px 24px;
+  font-size: 1.1rem;
+  color: rgba(198, 217, 236, 0.7);
+}
+
+.show-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.show-more-btn {
+  padding: 14px 32px;
+  background: rgba(18, 27, 38, 0.85);
+  border: 1px solid rgba(84, 125, 163, 0.35);
+  border-radius: 12px;
+  color: #6bb5ff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.show-more-btn:hover {
+  background: rgba(107, 181, 255, 0.1);
+  border-color: rgba(107, 181, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 64px 24px;
+  font-size: 1.1rem;
+  color: rgba(198, 217, 236, 0.7);
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+  .records {
+    padding: 0px 6vw 72px 6vw;
+  }
+
+  .records-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .record-card {
+    padding: 20px;
+  }
+
+  .filters {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .records-grid {
+    animation: fadeIn 0.8s ease forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

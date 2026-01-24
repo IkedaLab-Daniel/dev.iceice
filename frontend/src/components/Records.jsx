@@ -141,6 +141,19 @@ const Records = () => {
               Showing {displayedRecords.length} of {filteredRecords.length} records
             </div>
 
+            {/* Show Less Button - Top (visible when expanded) */}
+            {showAll && filteredRecords.length > INITIAL_DISPLAY && (
+              <div className="show-more-container">
+                <button 
+                  className="show-more-btn show-less-btn"
+                  onClick={() => setShowAll(false)}
+                >
+                  Show Less
+                  <ChevronUp size={18} />
+                </button>
+              </div>
+            )}
+
             {/* Records Grid */}
             <div className="records-grid">
               {displayedRecords.map((record) => (

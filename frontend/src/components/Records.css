@@ -194,6 +194,12 @@
   gap: 8px;
 }
 
+.show-less-btn {
+    bottom: 24px;
+    position: fixed;
+    z-index: 1;
+}
+
 .show-more-btn:hover {
   background: rgba(107, 181, 255, 0.1);
   border-color: rgba(107, 181, 255, 0.5);
@@ -203,6 +209,9 @@
 .loading,
 .error {
   text-align: center;
+  padding: 64px 24px;
+  font-size: 1.1rem;
+  color: rgba(198, 217, 236, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,9 +233,6 @@
   to {
     transform: rotate(360deg);
   }
-
-.error {
-  color: #ff6b6b;
 }
 
 /* Modal Styles */
@@ -251,16 +257,6 @@
   border-radius: 16px;
   padding: 24px;
   max-width: 90vw;
-
-  .modal-content {
-    padding: 16px;
-    max-width: 95vw;
-    max-height: 95vh;
-  }
-
-  .tiktok-embed {
-    min-height: 300px;
-  }
   max-height: 90vh;
   overflow: auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);

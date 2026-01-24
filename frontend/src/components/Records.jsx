@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import axiosInstance from '../api/axiosInstance'
 import { API_CONFIG } from '../config/api.config'
 import './Records.css'
-import { Timer } from 'lucide-react'
+import { Timer, Calendar, Tag, Play, Loader2, AlertCircle, X, ChevronDown, ChevronUp } from 'lucide-react'
 
 const Records = () => {
   const [records, setRecords] = useState([])
@@ -11,6 +11,9 @@ const Records = () => {
   const [selectedTopic, setSelectedTopic] = useState('All')
   const [showAll, setShowAll] = useState(false)
   const [allTopics, setAllTopics] = useState([])
+  const [modalOpen, setModalOpen] = useState(false)
+  const [selectedEmbed, setSelectedEmbed] = useState(null)
+  const [embedLoading, setEmbedLoading] = useState(false)
 
   useEffect(() => {
     fetchRecords()
@@ -58,6 +61,35 @@ const Records = () => {
     return `${mins}m`
   }
 
+  const fetchTikTokEmbed = async (tiktokUrl) => {
+    try {
+      setEmbedLoading(true)
+      setModalOpen(true)
+      
+      // Extract video ID from TikTok URL
+      // Supports formats like: https://www.tiktok.com/@username/video/1234567890
+      const videoIdMatch = tiktokUrl.match(/\/video\/(\d+)/)
+      
+      if (videoIdMatch && videoIdMatch[1]) {
+        const videoId = videoIdMatch[1]
+        const embedUrl = `https://www.tiktok.com/embed/v2/${videoId}`
+        setSelectedEmbed({ embedUrl })
+      } else {
+        setSelectedEmbed({ error: 'Invalid TikTok URL format' })
+      }
+    } catch (err) {
+      console.error('Error creating TikTok embed:', err)
+      setSelectedEmbed({ error: 'Failed to load TikTok video' })
+    } finally {
+      setEmbedLoading(false)
+    }
+  }
+
+  const closeModal = () => {
+    setModalOpen(false)
+    setSelectedEmbed(null)
+  }
+
   // Filter records by selected topic
   const filteredRecords = selectedTopic === 'All' 
     ? records 
@@ -73,7 +105,10 @@ const Records = () => {
     return (
       <section className="records">
         <div className="records-container">
-          <div className="loading">Loading records...</div>
+          <div className="loading">
+            <Loader2 className="spin-icon" size={24} />
+            Loading records...
+          </div>
         </div>
       </section>
     )
@@ -83,7 +118,10 @@ const Records = () => {
     return (
       <section className="records">
         <div className="records-container">
-          <div className="error">⚠️ {error}</div>
+          <div className="error">
+            <AlertCircle size={20} />
+            {error}
+          </div>
         </div>
       </section>
     )
@@ -115,11 +153,17 @@ const Records = () => {
                     </div>
                   </div>
                   
-                  <div className="record-date">{formatDate(record.date)}</div>
+                  <div className="record-date">
+                    <Calendar size={14} />
+                    {formatDate(record.date)}
+                  </div>
                   
                   <div className="record-topics">
                     {record.topic.map((topic, index) => (
-                      <span key={index} className="topic-tag">{topic}</span>
+                      <span key={index} className="topic-tag">
+                        <Tag size={12} />
+                        {topic}
+                      </span>
                     ))}
                   </div>
                   
@@ -128,14 +172,13 @@ const Records = () => {
                   )}
                   
                   {record.link && (
-                    <a 
-                      href={record.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <button 
+                      onClick={() => fetchTikTokEmbed(record.link)}
                       className="record-link"
                     >
+                      <Play size={16} />
                       View Post
-                    </a>
+                    </button>
                   )}
                 </div>
               ))}
@@ -148,13 +191,48 @@ const Records = () => {
                   className="show-more-btn"
                   onClick={() => setShowAll(!showAll)}
                 >
-                  {showAll ? 'Show Less' : `Show More (${filteredRecords.length - INITIAL_DISPLAY}) ▼`}
+                  {showAll ? (
+                    <>
+                      Show Less
+                      <ChevronUp size={18} />
+                    </>
+                  ) : (
+                    <>
+                      Show More ({filteredRecords.length - INITIAL_DISPLAY})
+                      <ChevronDown size={18} />
+                    </>
+                  )}
                 </button>
               </div>
             )}
           </>
         )}
       </div>
+
+      {/* TikTok Video Modal */}
+      {modalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>
+              <X size={20} />
+            </button>
+            
+            {embedLoading ? (
+              <div className="modal-loading">Loading video...</div>
+            ) : selectedEmbed?.error ? (
+              <div className="modal-error">{selectedEmbed.error}</div>
+            ) : selectedEmbed?.embedUrl ? (
+              <iframe
+                className="tiktok-iframe"
+                src={selectedEmbed.embedUrl}
+                allowFullScreen
+                scrolling="no"
+                allow="encrypted-media;"
+              />
+            ) : null}
+          </div>
+        </div>
+      )}
     </section>
   )
 }

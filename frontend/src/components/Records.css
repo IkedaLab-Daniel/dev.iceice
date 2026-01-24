@@ -109,6 +109,9 @@
   font-size: 0.875rem;
   color: rgba(198, 217, 236, 0.6);
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .record-topics {
@@ -126,6 +129,9 @@
   color: #7cb8ff;
   letter-spacing: 0.05rem;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .record-description {
@@ -138,18 +144,25 @@
 .record-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
+  padding: 10px 20px;
   font-size: 0.875rem;
   color: #6bb5ff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  background: rgba(107, 181, 255, 0.1);
+  border: 1px solid rgba(107, 181, 255, 0.3);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
   margin-top: auto;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .record-link:hover {
-  color: #8ec9ff;
-  text-decoration: underline;
+  background: rgba(107, 181, 255, 0.2);
+  border-color: rgba(107, 181, 255, 0.5);
+  transform: translateY(-2px);
 }
 
 .no-records {
@@ -176,6 +189,9 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .show-more-btn:hover {
@@ -187,13 +203,137 @@
 .loading,
 .error {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+
+.error {
+  color: #ff6b6b;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  position: relative;
+  background: rgba(18, 27, 38, 0.95);
+  border: 1px solid rgba(84, 125, 163, 0.35);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 90vw;
+
+  .modal-content {
+    padding: 16px;
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .tiktok-embed {
+    min-height: 300px;
+  }
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(107, 181, 255, 0.1);
+  border: 1px solid rgba(107, 181, 255, 0.3);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #6bb5ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  font-family: inherit;
+}
+
+.modal-close:hover {
+  background: rgba(107, 181, 255, 0.2);
+  border-color: rgba(107, 181, 255, 0.5);
+  transform: rotate(90deg);
+}
+
+.modal-loading,
+.modal-error {
+  text-align: center;
   padding: 64px 24px;
   font-size: 1.1rem;
   color: rgba(198, 217, 236, 0.7);
 }
 
-.error {
+.modal-error {
   color: #ff6b6b;
+}
+
+.tiktok-embed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.tiktok-embed blockquote {
+  margin: 0;
+}
+
+.tiktok-iframe {
+  width: 100%;
+  max-width: 605px;
+  height: 700px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
@@ -217,6 +357,17 @@
   .filter-btn {
     padding: 8px 16px;
     font-size: 0.8rem;
+  }
+
+  .modal-content {
+    padding: 16px;
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .tiktok-iframe {
+    height: 600px;
+    max-width: 100%;
   }
 }
 

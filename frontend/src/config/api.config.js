@@ -18,8 +18,8 @@ export const API_CONFIG = {
   
   // API endpoints
   ENDPOINTS: {
-    AUTH: '/auth',
-    RECORD: '/record',
+    AUTH: '/api/auth',
+    RECORD: '/api/records',
   },
 };
 

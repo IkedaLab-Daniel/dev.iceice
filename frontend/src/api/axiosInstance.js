@@ -4,7 +4,7 @@
  */
 
 import axios from 'axios';
-import { API_CONFIG, ENV } from '../config/api.config';
+import { API_CONFIG, ENV} from '../config/api.config'
 
 // Create axios instance with default config
 const axiosInstance = axios.create({

@@ -1,0 +1,224 @@
+.hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 42px 8vw 96px;
+  text-align: center;
+}
+
+.hero-orbit {
+  position: relative;
+  width: min(520px, 80vw);
+  height: min(520px, 80vw);
+  display: grid;
+  place-items: center;
+  margin-top: 10px;
+}
+
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(85, 133, 179, 0.25);
+  box-shadow: 0 0 60px rgba(22, 120, 235, 0.15);
+}
+
+.ring-1 {
+  width: 70%;
+  height: 70%;
+}
+
+.ring-2 {
+  width: 92%;
+  height: 92%;
+  border-color: rgba(85, 133, 179, 0.18);
+}
+
+.ring-3 {
+  width: 120%;
+  height: 120%;
+  border-color: rgba(85, 133, 179, 0.1);
+}
+
+.orbit-center {
+  position: relative;
+  width: 52%;
+  height: 52%;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 40% 30%, rgba(86, 154, 206, 0.25), rgba(12, 25, 38, 0.9));
+  border: 3px solid rgba(70, 149, 255, 0.7);
+  box-shadow: 0 0 30px rgba(34, 122, 233, 0.35);
+}
+
+.profile-card {
+  display: grid;
+  place-items: center;
+  gap: 14px;
+}
+
+.profile-avatar::after {
+  content: "";
+  position: absolute;
+  inset: 22%;
+  border-radius: 50%;
+  border: 2px solid rgba(220, 234, 249, 0.7);
+  opacity: 0.7;
+}
+
+.profile-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2rem;
+  color: rgba(198, 217, 236, 0.8);
+}
+
+.orbit-item {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(18, 27, 38, 0.85);
+  border: 1px solid rgba(84, 125, 163, 0.35);
+  color: #6ab3ff;
+  font-weight: 600;
+  box-shadow: 0 12px 22px rgba(6, 12, 20, 0.6);
+}
+
+.item-1 {
+  top: 6%;
+  left: 42%;
+}
+
+.item-2 {
+  top: 18%;
+  right: 16%;
+}
+
+.item-3 {
+  top: 46%;
+  right: 4%;
+}
+
+.item-4 {
+  bottom: 18%;
+  right: 22%;
+}
+
+.item-5 {
+  bottom: 16%;
+  left: 24%;
+}
+
+.item-6 {
+  top: 46%;
+  left: 6%;
+}
+
+.hero-copy {
+  max-width: 620px;
+  display: grid;
+  gap: 18px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(67, 139, 209, 0.4);
+  color: #7cb8ff;
+  font-size: 0.75rem;
+  letter-spacing: 0.2rem;
+  background: rgba(12, 27, 44, 0.7);
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2f88ff;
+  box-shadow: 0 0 12px rgba(55, 140, 255, 0.7);
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.hero-copy h1 .accent {
+  display: block;
+  color: #6bb5ff;
+  font-weight: 600;
+}
+
+.hero-copy p {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(196, 212, 230, 0.7);
+}
+
+.me {
+  width: 40vw;
+  border-radius: 6px;
+  filter: brightness(0.7) contrast(1.1);
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 36px 6vw 72px;
+  }
+
+  .orbit-item {
+    width: 48px;
+    height: 48px;
+    font-size: 0.8rem;
+  }
+
+  .profile-avatar {
+    width: 88px;
+    height: 88px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-orbit {
+    animation: floatUp 1.2s ease forwards;
+  }
+
+  .hero-copy {
+    animation: fadeIn 1.1s ease 0.15s forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

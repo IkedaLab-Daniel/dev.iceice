@@ -61,6 +61,50 @@ const Records = () => {
     return `${mins}m`
   }
 
+  const getTechIcon = (topic) => {
+    const iconMap = {
+      'js': 'js.svg',
+      'react': 'react.svg',
+      'node': 'nodeSVG.svg',
+      'express': 'express.webp',
+      'mongodb': 'mongodb.svg',
+      'python': 'python.svg',
+      'django': 'django.svg',
+      'flask': 'flask.svg',
+      'html': 'html.svg',
+      'css3': 'css3.svg',
+      'typeScript': 'typescript.svg',
+      'git': 'git.svg',
+      'gitHub': 'github.svg',
+      'docker': 'docker.png',
+      'kubernetes': 'kubernetes.svg',
+      'postgreSQL': 'postgresql.svg',
+      'mySQL': 'mysql.png',
+      'tailwind': 'tailwind.svg',
+      'bootstrap': 'bootstrap.svg',
+      'sass': 'sass.svg',
+      'redux': 'redux.svg',
+      'vite': 'vite.svg',
+      'php': 'php.svg',
+      'laravel': 'laravel.svg',
+      'prisma': 'prisma.svg',
+      'figma': 'figma.svg',
+      'sq;': 'sqlSVG.svg',
+      'ai': 'ai.svg',
+      'terminal': 'terminal.svg',
+    }
+
+    const fileName = iconMap[topic]
+    if (fileName) {
+      try {
+        return new URL(`../assets/tech-icons/${fileName}`, import.meta.url).href
+      } catch {
+        return null
+      }
+    }
+    return null
+  }
+
   const fetchTikTokEmbed = async (tiktokUrl) => {
     try {
       setEmbedLoading(true)
@@ -172,12 +216,18 @@ const Records = () => {
                   </div>
                   
                   <div className="record-topics">
-                    {record.topic.map((topic, index) => (
-                      <span key={index} className="topic-tag">
-                        <Tag size={12} />
-                        {topic}
-                      </span>
-                    ))}
+                    {record.topic.map((topic, index) => {
+                      const iconUrl = getTechIcon(topic)
+                      return (
+                        <span key={index} className="topic-tag">
+                          {iconUrl ? (
+                            <img src={iconUrl} alt={topic} className="tech-icon" />
+                          ) : (
+                            <Tag size={12} />
+                          )}
+                        </span>
+                      )
+                    })}
                   </div>
                   
                   {record.description && (

@@ -121,17 +121,15 @@
 }
 
 .topic-tag {
-  font-size: 0.75rem;
-  padding: 6px 12px;
-  background: rgba(12, 27, 44, 0.7);
-  border: 1px solid rgba(67, 139, 209, 0.4);
-  border-radius: 999px;
-  color: #7cb8ff;
-  letter-spacing: 0.05rem;
-  font-weight: 500;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+}
+
+.tech-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .record-description {

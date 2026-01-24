@@ -85,6 +85,30 @@
   align-items: center;
 }
 
+.record-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-edit {
+  background: transparent;
+  border: 1px solid rgba(107, 181, 255, 0.3);
+  color: #6bb5ff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-edit:hover {
+  background: rgba(107, 181, 255, 0.1);
+  border-color: #6bb5ff;
+}
+
 .record-day {
   font-size: 1.5rem;
   font-weight: bold;
@@ -137,6 +161,7 @@
   color: rgba(196, 212, 230, 0.8);
   line-height: 1.6;
   margin: 0;
+  white-space: pre-line;
 }
 
 .record-link {

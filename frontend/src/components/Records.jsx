@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import axiosInstance from '../api/axiosInstance'
 import { API_CONFIG } from '../config/api.config'
 import './Records.css'
-import { Timer, Calendar, Tag, Play, Loader2, AlertCircle, X, ChevronDown, ChevronUp } from 'lucide-react'
+import { Timer, Calendar, Tag, Play, Loader2, AlertCircle, X, ChevronDown, ChevronUp, Edit } from 'lucide-react'
+import UpdateRecord from './UpdateRecord'
 
 const Records = () => {
   const [records, setRecords] = useState([])
@@ -14,6 +15,8 @@ const Records = () => {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedEmbed, setSelectedEmbed] = useState(null)
   const [embedLoading, setEmbedLoading] = useState(false)
+  const [updateModalOpen, setUpdateModalOpen] = useState(false)
+  const [selectedRecord, setSelectedRecord] = useState(null)
 
   useEffect(() => {
     fetchRecords()
@@ -89,7 +92,7 @@ const Records = () => {
       'laravel': 'laravel.svg',
       'prisma': 'prisma.svg',
       'figma': 'figma.svg',
-      'sq;': 'sqlSVG.svg',
+      'sql': 'sqlSVG.svg',
       'ai': 'ai.svg',
       'terminal': 'terminal.svg',
     }
@@ -110,13 +113,15 @@ const Records = () => {
       setEmbedLoading(true)
       setModalOpen(true)
       
-      // Extract video ID from TikTok URL
-      // Supports formats like: https://www.tiktok.com/@username/video/1234567890
-      const videoIdMatch = tiktokUrl.match(/\/video\/(\d+)/)
+      // Extract post ID from TikTok URL
+      // Supports formats: 
+      // - https://www.tiktok.com/@username/video/1234567890
+      // - https://www.tiktok.com/@username/photo/1234567890
+      const postIdMatch = tiktokUrl.match(/\/(video|photo)\/(\d+)/)
       
-      if (videoIdMatch && videoIdMatch[1]) {
-        const videoId = videoIdMatch[1]
-        const embedUrl = `https://www.tiktok.com/embed/v2/${videoId}`
+      if (postIdMatch && postIdMatch[2]) {
+        const postId = postIdMatch[2]
+        const embedUrl = `https://www.tiktok.com/embed/v2/${postId}`
         setSelectedEmbed({ embedUrl })
       } else {
         setSelectedEmbed({ error: 'Invalid TikTok URL format' })
@@ -132,6 +137,37 @@ const Records = () => {
   const closeModal = () => {
     setModalOpen(false)
     setSelectedEmbed(null)
+  }
+
+  const openUpdateModal = (record) => {
+    setSelectedRecord(record)
+    setUpdateModalOpen(true)
+  }
+
+  const closeUpdateModal = () => {
+    setUpdateModalOpen(false)
+    setSelectedRecord(null)
+  }
+
+  const handleRecordUpdate = (updatedRecord) => {
+    setRecords(prevRecords => 
+      prevRecords.map(record => 
+        record._id === updatedRecord._id ? updatedRecord : record
+      )
+    )
+  }
+
+  const moveToNextRecord = (currentRecord) => {
+    // Find the next record by day number
+    const currentDay = currentRecord.day
+    const nextRecord = records.find(record => record.day === currentDay + 1)
+    
+    if (nextRecord) {
+      setSelectedRecord(nextRecord)
+    } else {
+      // No more records, close the modal
+      closeUpdateModal()
+    }
   }
 
   // Filter records by selected topic
@@ -204,9 +240,18 @@ const Records = () => {
                 <div key={record._id} className="record-card">
                   <div className="record-header">
                     <div className="record-day">Day {record.day}</div>
-                    <div className="record-duration">
+                    <div className="record-actions">
+                      <button 
+                        className="btn-edit"
+                        onClick={() => openUpdateModal(record)}
+                        title="Edit record"
+                      >
+                        <Edit size={16} />
+                      </button>
+                      <div className="record-duration">
                         {formatDuration(record.duration)}
                         <Timer size={15} />
+                      </div>
                     </div>
                   </div>
                   
@@ -295,6 +340,16 @@ const Records = () => {
             ) : null}
           </div>
         </div>
+      )}
+
+      {/* Update Record Modal */}
+      {updateModalOpen && (
+        <UpdateRecord 
+          record={selectedRecord}
+          onClose={closeUpdateModal}
+          onUpdate={handleRecordUpdate}
+          onNext={moveToNextRecord}
+        />
       )}
     </section>
   )

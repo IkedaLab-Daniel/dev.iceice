@@ -1,0 +1,230 @@
+.update-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.update-modal-content {
+  position: relative;
+  background: rgba(18, 27, 38, 0.98);
+  border: 1px solid rgba(84, 125, 163, 0.35);
+  border-radius: 16px;
+  padding: 0;
+  max-width: 600px;
+  width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+}
+
+.update-modal-header {
+  position: sticky;
+  top: 0;
+  background: rgba(18, 27, 38, 0.98);
+  border-bottom: 1px solid rgba(84, 125, 163, 0.25);
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.update-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #6bb5ff;
+}
+
+.update-modal-close {
+  background: rgba(107, 181, 255, 0.1);
+  border: 1px solid rgba(107, 181, 255, 0.3);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6bb5ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.update-modal-close:hover {
+  background: rgba(107, 181, 255, 0.2);
+  border-color: rgba(107, 181, 255, 0.5);
+  transform: rotate(90deg);
+}
+
+.update-form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(198, 217, 236, 0.9);
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(12, 27, 44, 0.7);
+  border: 1px solid rgba(84, 125, 163, 0.35);
+  border-radius: 8px;
+  padding: 12px;
+  color: rgba(220, 234, 249, 0.9);
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(107, 181, 255, 0.6);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group small {
+  font-size: 0.75rem;
+  color: rgba(198, 217, 236, 0.6);
+}
+
+.form-error {
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  border-radius: 8px;
+  padding: 12px;
+  color: #ff6b6b;
+  font-size: 0.875rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.btn-cancel,
+.btn-save {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-cancel {
+  background: rgba(84, 125, 163, 0.1);
+  border: 1px solid rgba(84, 125, 163, 0.35);
+  color: rgba(198, 217, 236, 0.8);
+}
+
+.btn-cancel:hover {
+  background: rgba(84, 125, 163, 0.2);
+  border-color: rgba(84, 125, 163, 0.5);
+}
+
+.btn-save {
+  background: rgba(107, 181, 255, 0.15);
+  border: 1px solid rgba(107, 181, 255, 0.5);
+  color: #6bb5ff;
+}
+
+.btn-save:hover:not(:disabled) {
+  background: rgba(107, 181, 255, 0.25);
+  border-color: rgba(107, 181, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .update-modal-content {
+    width: 95vw;
+    max-height: 95vh;
+  }
+
+  .update-modal-header {
+    padding: 16px;
+  }
+
+  .update-modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .update-form {
+    padding: 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-save {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

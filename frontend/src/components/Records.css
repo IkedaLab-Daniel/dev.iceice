@@ -46,6 +46,29 @@
   transform: translateY(-2px);
 }
 
+.btn-mode-toggle {
+  background: rgba(107, 181, 255, 0.1);
+  border: 1px solid rgba(107, 181, 255, 0.3);
+  color: #6bb5ff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  margin-top: 20px;
+}
+
+.btn-mode-toggle:hover {
+  background: rgba(107, 181, 255, 0.2);
+  border-color: rgba(107, 181, 255, 0.5);
+  transform: translateY(-2px);
+}
+
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -91,6 +114,52 @@
   grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: 24px;
   width: 100%;
+}
+
+/* Simple Mode Styles */
+.simple-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.simple-card {
+  background: rgba(18, 27, 38, 0.85);
+  border: 1px solid rgba(84, 125, 163, 0.35);
+  border-radius: 12px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  aspect-ratio: 1;
+  min-height: 80px;
+}
+
+.simple-card[style*="cursor: pointer"]:hover {
+  transform: translateY(-4px);
+  border-color: rgba(107, 181, 255, 0.6);
+  background: rgba(107, 181, 255, 0.1);
+}
+
+.simple-card[style*="cursor: default"] {
+  opacity: 0.6;
+}
+
+.simple-day {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #6bb5ff;
+  line-height: 1;
+}
+
+.simple-duration {
+  font-size: 0.75rem;
+  color: rgba(198, 217, 236, 0.7);
+  font-weight: 500;
 }
 
 .record-card {
@@ -406,6 +475,24 @@
   
   .records {
     padding: 0px 4vw 72px 4vw;
+  }
+
+  .simple-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 10px;
+  }
+
+  .simple-card {
+    padding: 12px 8px;
+    min-height: 70px;
+  }
+
+  .simple-day {
+    font-size: 1.5rem;
+  }
+
+  .simple-duration {
+    font-size: 0.7rem;
   }
 
   .records-grid {

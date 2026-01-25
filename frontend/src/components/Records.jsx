@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useAuth } from '../context/AuthContext'
 import recordsData from '../data/records.json'
 import './Records.css'
-import { Timer, Calendar, Tag, Play, Loader2, AlertCircle, X, ChevronDown, ChevronUp, Edit, Plus } from 'lucide-react'
+import { Timer, Calendar, Tag, Play, Loader2, AlertCircle, X, ChevronDown, ChevronUp, Edit, Plus, LayoutGrid, LayoutList } from 'lucide-react'
 import UpdateRecord from './UpdateRecord'
 import AddRecord from './AddRecord'
 
@@ -21,6 +21,7 @@ const Records = () => {
   const [updateModalOpen, setUpdateModalOpen] = useState(false)
   const [selectedRecord, setSelectedRecord] = useState(null)
   const [addModalOpen, setAddModalOpen] = useState(false)
+  const [simpleMode, setSimpleMode] = useState(false)
   const { isAuthenticated } = useAuth()
 
   useEffect(() => {
@@ -270,6 +271,14 @@ const Records = () => {
       <div className="records-container">
         <div className="records-header">
           <h2 className="records-title">Study Records</h2>
+          <button 
+            className="btn-mode-toggle" 
+            onClick={() => setSimpleMode(!simpleMode)}
+            title={simpleMode ? "Switch to Detailed View" : "Switch to Simple View"}
+          >
+            {simpleMode ? <LayoutList size={18} /> : <LayoutGrid size={18} />}
+            {simpleMode ? 'Detailed' : 'Simple'}
+          </button>
           {/* Add button hidden for static deployment */}
           {/* {isAuthenticated && (
             <button className="btn-add-record" onClick={openAddModal}>
@@ -283,6 +292,25 @@ const Records = () => {
           <div className="no-records">No records found!</div>
         ) : (
           <>
+            {simpleMode ? (
+              /* Simple Mode - Compact Grid */
+              <div className="simple-grid">
+                {displayedRecords.map((record) => (
+                  <div 
+                    key={record._id} 
+                    className="simple-card"
+                    onClick={() => record.link ? fetchTikTokEmbed(record.link) : null}
+                    style={{ cursor: record.link ? 'pointer' : 'default' }}
+                    title={`Day ${record.day} - ${formatDate(record.date)}\\n${formatDuration(record.duration)}${record.link ? '\\nClick to view post' : ''}`}
+                  >
+                    <div className="simple-day">{record.day}</div>
+                    <div className="simple-duration">{formatDuration(record.duration)}</div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              /* Detailed Mode - Full Cards */
+              <>
             {/* Show Less Button - Top (visible when expanded) */}
             {showAll && filteredRecords.length > INITIAL_DISPLAY && (
               <div className="show-more-container">
@@ -355,8 +383,8 @@ const Records = () => {
                   )}
                 </div>
               ))}
-            </div>
-
+            </div>            </>
+            )}
             {/* Show More/Hide Button */}
             {filteredRecords.length > INITIAL_DISPLAY && (
               <div className="show-more-container">

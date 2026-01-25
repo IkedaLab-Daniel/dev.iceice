@@ -1,0 +1,110 @@
+.calendar-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0f19 0%, #1a2332 100%);
+}
+
+.calendar-page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 8vw 96px;
+}
+
+.calendar-page-header {
+  text-align: center;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.btn-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(107, 181, 255, 0.1);
+  border: 1px solid rgba(107, 181, 255, 0.3);
+  border-radius: 8px;
+  color: #6bb5ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.btn-back:hover {
+  background: rgba(107, 181, 255, 0.2);
+  border-color: rgba(107, 181, 255, 0.5);
+  transform: translateX(-4px);
+}
+
+.page-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: #6bb5ff;
+  margin: 0;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6bb5ff 0%, #5aa3e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: rgba(198, 217, 236, 0.7);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calendar-view-section {
+  margin-top: 48px;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  color: #6bb5ff;
+  margin: 0 0 32px 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .calendar-page-container {
+    padding: 24px 4vw 72px;
+  }
+
+  .calendar-page-header {
+    margin-bottom: 32px;
+  }
+
+  .btn-back {
+    position: static;
+    margin-bottom: 24px;
+    width: fit-content;
+  }
+
+  .calendar-view-section {
+    margin-top: 32px;
+  }
+
+  .section-title {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-back {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .btn-back svg {
+    width: 18px;
+    height: 18px;
+  }
+}

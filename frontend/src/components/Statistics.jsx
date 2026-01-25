@@ -1,56 +1,22 @@
-import { useEffect, useState } from 'react'
-import axiosInstance from '../api/axiosInstance'
-import { API_CONFIG } from '../config/api.config'
+import { useMemo } from 'react'
 import { Clock, Flame } from 'lucide-react'
 import './Statistics.css'
 
-const Statistics = () => {
-  const [records, setRecords] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  const [stats, setStats] = useState({
-    totalDays: 0,
-    totalHours: 0,
-    averageHours: 0,
-    topTopics: [],
-  })
+const Statistics = ({ records: recordsProp = [] }) => {
 
-  useEffect(() => {
-    fetchRecords()
-  }, [])
-
-  const fetchRecords = async () => {
-    try {
-      setLoading(true)
-      const response = await axiosInstance.get(API_CONFIG.ENDPOINTS.RECORD)
-      
-      if (response.data.success) {
-        const recordsData = response.data.data
-        setRecords(recordsData)
-        calculateStats(recordsData)
-      }
-    } catch (err) {
-      setError(err.response?.data?.error || 'Failed to fetch records')
-      console.error('Error fetching records:', err)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const calculateStats = (recordsData) => {
-    if (!recordsData.length) {
-      setStats({ totalDays: 0, totalHours: 0, averageHours: 0, topTopics: [] })
-      return
+  const stats = useMemo(() => {
+    if (!recordsProp.length) {
+      return { totalDays: 0, totalHours: 0, averageHours: 0, topTopics: [] }
     }
 
-    const totalDays = recordsData.length
-    const totalMinutes = recordsData.reduce((sum, record) => sum + record.duration, 0)
+    const totalDays = recordsProp.length
+    const totalMinutes = recordsProp.reduce((sum, record) => sum + record.duration, 0)
     const totalHours = (totalMinutes / 60).toFixed(1)
     const averageHours = (totalMinutes / totalDays / 60).toFixed(1)
 
     // Calculate top topics
     const topicCount = {}
-    recordsData.forEach(record => {
+    recordsProp.forEach(record => {
       record.topic.forEach(topic => {
         topicCount[topic] = (topicCount[topic] || 0) + 1
       })
@@ -61,28 +27,8 @@ const Statistics = () => {
       .slice(0, 5)
       .map(([topic, count]) => ({ topic, count }))
 
-    setStats({ totalDays, totalHours, averageHours, topTopics })
-  }
-
-  if (loading) {
-    return (
-      <section className="statistics">
-        <div className="stats-container">
-          <div className="loading">Loading statistics...</div>
-        </div>
-      </section>
-    )
-  }
-
-  if (error) {
-    return (
-      <section className="statistics">
-        <div className="stats-container">
-          <div className="error">⚠️ {error}</div>
-        </div>
-      </section>
-    )
-  }
+    return { totalDays, totalHours, averageHours, topTopics }
+  }, [recordsProp])
 
   return (
     <section className="statistics">

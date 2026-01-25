@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import axiosInstance from '../api/axiosInstance'
-import { API_CONFIG } from '../config/api.config'
+// import axiosInstance from '../api/axiosInstance'
+// import { API_CONFIG } from '../config/api.config'
 import { useAuth } from '../context/AuthContext'
+import recordsData from '../data/records.json'
 import './Records.css'
 import { Timer, Calendar, Tag, Play, Loader2, AlertCircle, X, ChevronDown, ChevronUp, Edit, Plus } from 'lucide-react'
 import UpdateRecord from './UpdateRecord'
@@ -29,22 +30,42 @@ const Records = () => {
   const fetchRecords = async () => {
     try {
       setLoading(true)
-      const response = await axiosInstance.get(API_CONFIG.ENDPOINTS.RECORD)
       
-      if (response.data.success) {
-        const sortedRecords = response.data.data.sort((a, b) => a.day - b.day)
-        setRecords(sortedRecords)
-        
-        // Extract all unique topics
-        const topics = new Set()
-        sortedRecords.forEach(record => {
-          record.topic.forEach(topic => topics.add(topic))
-        })
-        setAllTopics(['All', ...Array.from(topics).sort()])
-      }
+      // Using local JSON data instead of API
+      // Filter out empty objects and process the data
+      const validRecords = recordsData.filter(record => record._id && record.day)
+      
+      // Convert MongoDB date format to JavaScript Date
+      const processedRecords = validRecords.map(record => ({
+        ...record,
+        _id: record._id.$oid || record._id,
+        date: record.date.$date || record.date,
+      }))
+      
+      const sortedRecords = processedRecords.sort((a, b) => a.day - b.day)
+      setRecords(sortedRecords)
+      
+      // Extract all unique topics
+      const topics = new Set()
+      sortedRecords.forEach(record => {
+        record.topic.forEach(topic => topics.add(topic))
+      })
+      setAllTopics(['All', ...Array.from(topics).sort()])
+      
+      // API version (commented out for static deployment):
+      // const response = await axiosInstance.get(API_CONFIG.ENDPOINTS.RECORD)
+      // if (response.data.success) {
+      //   const sortedRecords = response.data.data.sort((a, b) => a.day - b.day)
+      //   setRecords(sortedRecords)
+      //   const topics = new Set()
+      //   sortedRecords.forEach(record => {
+      //     record.topic.forEach(topic => topics.add(topic))
+      //   })
+      //   setAllTopics(['All', ...Array.from(topics).sort()])
+      // }
     } catch (err) {
-      setError(err.response?.data?.error || 'Failed to fetch records')
-      console.error('Error fetching records:', err)
+      setError('Failed to load records')
+      console.error('Error loading records:', err)
     } finally {
       setLoading(false)
     }
@@ -249,23 +270,19 @@ const Records = () => {
       <div className="records-container">
         <div className="records-header">
           <h2 className="records-title">Study Records</h2>
-          {isAuthenticated && (
+          {/* Add button hidden for static deployment */}
+          {/* {isAuthenticated && (
             <button className="btn-add-record" onClick={openAddModal}>
               <Plus size={18} />
               Add Record
             </button>
-          )}
+          )} */}
         </div>
         
         {records.length === 0 ? (
           <div className="no-records">No records found!</div>
         ) : (
           <>
-            {/* Records Count */}
-            <div className="records-count">
-              Showing {displayedRecords.length} of {filteredRecords.length} records
-            </div>
-
             {/* Show Less Button - Top (visible when expanded) */}
             {showAll && filteredRecords.length > INITIAL_DISPLAY && (
               <div className="show-more-container">
@@ -286,7 +303,8 @@ const Records = () => {
                   <div className="record-header">
                     <div className="record-day">Day {record.day}</div>
                     <div className="record-actions">
-                      {isAuthenticated && (
+                      {/* Edit button hidden for static deployment */}
+                      {/* {isAuthenticated && (
                         <button 
                           className="btn-edit"
                           onClick={() => openUpdateModal(record)}
@@ -294,7 +312,7 @@ const Records = () => {
                         >
                           <Edit size={16} />
                         </button>
-                      )}
+                      )} */}
                       <div className="record-duration">
                         {formatDuration(record.duration)}
                         <Timer size={15} />

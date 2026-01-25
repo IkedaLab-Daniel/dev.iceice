@@ -398,6 +398,12 @@
 }
 
 @media (max-width: 768px) {
+  .records-header {
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+  }
+  
   .records {
     padding: 0px 4vw 72px 4vw;
   }

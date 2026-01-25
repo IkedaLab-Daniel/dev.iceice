@@ -12,8 +12,7 @@
 .stats-title {
   font-size: clamp(2rem, 4vw, 2.5rem);
   color: #6bb5ff;
-  margin-bottom: 32px;
-  text-align: center;
+  margin: 32px 0 32px 0;
 }
 
 .stats-grid {
@@ -126,6 +125,10 @@
 }
 
 @media (max-width: 768px) {
+  .stats-title {
+    text-align: center;
+  }
+  
   .statistics {
     padding: 0px 20px 0px 20px;
   }

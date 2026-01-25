@@ -29,7 +29,8 @@ function Header() {
         <a href="#">Focus</a>
         <a href="#">Links</a>
       </nav>
-      <button className="primary-button" type="button" onClick={handleAuthAction}>
+      {/* Login button hidden for static deployment */}
+      {/* <button className="primary-button" type="button" onClick={handleAuthAction}>
         {isAuthenticated ? (
           <>
             <LogOut size={16} />
@@ -41,7 +42,7 @@ function Header() {
             Login
           </>
         )}
-      </button>
+      </button> */}
     </header>
   )
 }

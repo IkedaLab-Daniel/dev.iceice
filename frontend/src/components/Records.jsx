@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axiosInstance from '../api/axiosInstance'
 import { API_CONFIG } from '../config/api.config'
+import { useAuth } from '../context/AuthContext'
 import './Records.css'
 import { Timer, Calendar, Tag, Play, Loader2, AlertCircle, X, ChevronDown, ChevronUp, Edit, Plus } from 'lucide-react'
 import UpdateRecord from './UpdateRecord'
@@ -19,6 +20,7 @@ const Records = () => {
   const [updateModalOpen, setUpdateModalOpen] = useState(false)
   const [selectedRecord, setSelectedRecord] = useState(null)
   const [addModalOpen, setAddModalOpen] = useState(false)
+  const { isAuthenticated } = useAuth()
 
   useEffect(() => {
     fetchRecords()
@@ -247,10 +249,12 @@ const Records = () => {
       <div className="records-container">
         <div className="records-header">
           <h2 className="records-title">Study Records</h2>
-          <button className="btn-add-record" onClick={openAddModal}>
-            <Plus size={18} />
-            Add Record
-          </button>
+          {isAuthenticated && (
+            <button className="btn-add-record" onClick={openAddModal}>
+              <Plus size={18} />
+              Add Record
+            </button>
+          )}
         </div>
         
         {records.length === 0 ? (
@@ -282,13 +286,15 @@ const Records = () => {
                   <div className="record-header">
                     <div className="record-day">Day {record.day}</div>
                     <div className="record-actions">
-                      <button 
-                        className="btn-edit"
-                        onClick={() => openUpdateModal(record)}
-                        title="Edit record"
-                      >
-                        <Edit size={16} />
-                      </button>
+                      {isAuthenticated && (
+                        <button 
+                          className="btn-edit"
+                          onClick={() => openUpdateModal(record)}
+                          title="Edit record"
+                        >
+                          <Edit size={16} />
+                        </button>
+                      )}
                       <div className="record-duration">
                         {formatDuration(record.duration)}
                         <Timer size={15} />

@@ -19,6 +19,8 @@ export const API_CONFIG = {
   // API endpoints
   ENDPOINTS: {
     AUTH: '/api/auth',
+    LOGIN: '/api/auth/login',
+    REGISTER: '/api/auth/register',
     RECORD: '/api/records',
   },
 };

@@ -1,6 +1,20 @@
+import { useAuth } from '../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
+import { LogOut, LogIn } from 'lucide-react'
 import './Header.css'
 
 function Header() {
+  const { isAuthenticated, logout } = useAuth()
+  const navigate = useNavigate()
+
+  const handleAuthAction = () => {
+    if (isAuthenticated) {
+      logout()
+    } else {
+      navigate('/login')
+    }
+  }
+
   return (
     <header className="site-header">
       <div className="brand">
@@ -15,8 +29,18 @@ function Header() {
         <a href="#">Focus</a>
         <a href="#">Links</a>
       </nav>
-      <button className="primary-button" type="button">
-        Connect
+      <button className="primary-button" type="button" onClick={handleAuthAction}>
+        {isAuthenticated ? (
+          <>
+            <LogOut size={16} />
+            Logout
+          </>
+        ) : (
+          <>
+            <LogIn size={16} />
+            Login
+          </>
+        )}
       </button>
     </header>
   )

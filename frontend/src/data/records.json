@@ -8098,4 +8098,15 @@
     "$date": "2026-01-25T14:00:21.653Z"
   },
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "697621f5d93756164ac6aae5"
+  },
+  "day": 390,
+  "duration": 215,
+  "date": "2026-01-24T16:00:00.000Z",
+  "topic": ["react", "css", "leetcode"],
+  "description": "Joined the LeetCode Weekly Contest, then continued my MERN project in the evening for tracking study progress. It’s done for now, but I’ll keep refining it as better design ideas come up 📚📚",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7599448081272196360?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

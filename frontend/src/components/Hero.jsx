@@ -19,8 +19,8 @@ function Hero() {
           <span className="accent">1 hour/+ a Day</span>
         </h1>
         <p>
-          Documenting the journey from novice to master. Tracking daily
-          progress, focus hours, and the tech stack that powers the grind.
+          A visual chronicle of consistent learning. Each day tracked with study duration, topics mastered, and progress milestones. 
+          Explore the journey through interactive calendar heatmaps, detailed study records, and tech stack evolution.
         </p>
       </div>
     </main>

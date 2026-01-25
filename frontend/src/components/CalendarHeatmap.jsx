@@ -1,9 +1,11 @@
 import { useState, useMemo } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import './CalendarHeatmap.css'
 
 const CalendarHeatmap = ({ records }) => {
   const [hoveredDay, setHoveredDay] = useState(null)
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
+  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear())
 
   // Calculate contribution data
   const contributionData = useMemo(() => {
@@ -25,16 +27,26 @@ const CalendarHeatmap = ({ records }) => {
     return dataMap
   }, [records])
 
-  // Generate data grouped by month (last 12 months)
+  // Get available years from records
+  const availableYears = useMemo(() => {
+    const years = new Set()
+    records.forEach(record => {
+      if (record.date) {
+        const date = new Date(record.date)
+        years.add(date.getFullYear())
+      }
+    })
+    return Array.from(years).sort((a, b) => b - a) // Descending order
+  }, [records])
+
+  // Generate data grouped by month (all 12 months of selected year)
   const generateMonthlyData = () => {
     const months = []
-    const today = new Date()
     
-    // Generate last 12 months
-    for (let i = 11; i >= 0; i--) {
-      const monthDate = new Date(today.getFullYear(), today.getMonth() - i, 1)
-      const year = monthDate.getFullYear()
-      const month = monthDate.getMonth()
+    // Generate all 12 months for selected year
+    for (let month = 0; month < 12; month++) {
+      const monthDate = new Date(selectedYear, month, 1)
+      const year = selectedYear
       const monthName = monthDate.toLocaleDateString('en-US', { month: 'short' })
       
       const firstDay = new Date(year, month, 1)
@@ -118,10 +130,46 @@ const CalendarHeatmap = ({ records }) => {
     setHoveredDay(null)
   }
 
+  const previousYear = () => {
+    setSelectedYear(prev => prev - 1)
+  }
+
+  const nextYear = () => {
+    setSelectedYear(prev => prev + 1)
+  }
+
+  const goToCurrentYear = () => {
+    setSelectedYear(new Date().getFullYear())
+  }
+
+  const canGoPrevious = availableYears.length === 0 || selectedYear > Math.min(...availableYears)
+  const canGoNext = selectedYear < new Date().getFullYear()
+
   return (
     <section className="calendar-heatmap">
       <div className="heatmap-container">
-        <h2 className="heatmap-title">Study Activity</h2>
+        <div className="heatmap-header">
+          <h2 className="heatmap-title">Study Activity</h2>
+          <div className="year-navigation">
+            <button 
+              className="btn-year-nav" 
+              onClick={previousYear}
+              disabled={!canGoPrevious}
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button className="btn-current-year" onClick={goToCurrentYear}>
+              {selectedYear}
+            </button>
+            <button 
+              className="btn-year-nav" 
+              onClick={nextYear}
+              disabled={!canGoNext}
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </div>
         
         <div className="heatmap-months-wrapper">
           {monthsData.map((monthData, monthIndex) => {

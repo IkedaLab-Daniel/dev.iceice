@@ -10,11 +10,70 @@
   margin: 0 auto;
 }
 
+.heatmap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 .heatmap-title {
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
   color: #6bb5ff;
-  margin-bottom: 32px;
-  text-align: center;
+  margin: 0;
+}
+
+.year-navigation {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-year-nav {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(107, 181, 255, 0.1);
+  border: 1px solid rgba(107, 181, 255, 0.3);
+  border-radius: 8px;
+  color: #6bb5ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.btn-year-nav:hover:not(:disabled) {
+  background: rgba(107, 181, 255, 0.2);
+  border-color: rgba(107, 181, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.btn-year-nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btn-current-year {
+  padding: 8px 24px;
+  background: rgba(107, 181, 255, 0.15);
+  border: 1px solid rgba(107, 181, 255, 0.4);
+  border-radius: 8px;
+  color: #6bb5ff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  min-width: 80px;
+}
+
+.btn-current-year:hover {
+  background: rgba(107, 181, 255, 0.25);
+  border-color: rgba(107, 181, 255, 0.6);
 }
 
 h2{
@@ -241,6 +300,30 @@ h2{
 @media (max-width: 768px) {
   .calendar-heatmap {
     padding: 0px 4vw 32px 4vw;
+  }
+
+  .heatmap-header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .heatmap-title {
+    font-size: 1.5rem;
+  }
+
+  .year-navigation {
+    gap: 10px;
+  }
+
+  .btn-year-nav {
+    width: 32px;
+    height: 32px;
+  }
+
+  .btn-current-year {
+    font-size: 1rem;
+    padding: 6px 20px;
   }
 
   .heatmap-months-wrapper {

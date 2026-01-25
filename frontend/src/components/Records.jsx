@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import axiosInstance from '../api/axiosInstance'
 import { API_CONFIG } from '../config/api.config'
 import './Records.css'
-import { Timer, Calendar, Tag, Play, Loader2, AlertCircle, X, ChevronDown, ChevronUp, Edit } from 'lucide-react'
+import { Timer, Calendar, Tag, Play, Loader2, AlertCircle, X, ChevronDown, ChevronUp, Edit, Plus } from 'lucide-react'
 import UpdateRecord from './UpdateRecord'
+import AddRecord from './AddRecord'
 
 const Records = () => {
   const [records, setRecords] = useState([])
@@ -17,6 +18,7 @@ const Records = () => {
   const [embedLoading, setEmbedLoading] = useState(false)
   const [updateModalOpen, setUpdateModalOpen] = useState(false)
   const [selectedRecord, setSelectedRecord] = useState(null)
+  const [addModalOpen, setAddModalOpen] = useState(false)
 
   useEffect(() => {
     fetchRecords()
@@ -51,7 +53,8 @@ const Records = () => {
     return date.toLocaleDateString('en-US', { 
       year: 'numeric', 
       month: 'short', 
-      day: 'numeric' 
+      day: 'numeric',
+      timeZone: 'Asia/Manila'
     })
   }
 
@@ -73,16 +76,16 @@ const Records = () => {
       'mongodb': 'mongodb.svg',
       'python': 'python.svg',
       'django': 'django.svg',
-      'flask': 'flask.svg',
+      'flask': 'flask-light.svg',
       'html': 'html.svg',
       'css3': 'css3.svg',
       'typeScript': 'typescript.svg',
       'git': 'git.svg',
-      'gitHub': 'github.svg',
+      'github': 'github.svg',
       'docker': 'docker.png',
       'kubernetes': 'kubernetes.svg',
       'postgreSQL': 'postgresql.svg',
-      'mySQL': 'mysql.png',
+      'mysql': 'mysql.png',
       'tailwind': 'tailwind.svg',
       'bootstrap': 'bootstrap.svg',
       'sass': 'sass.svg',
@@ -95,6 +98,17 @@ const Records = () => {
       'sql': 'sqlSVG.svg',
       'ai': 'ai.svg',
       'terminal': 'terminal.svg',
+      'security': 'security.svg',
+      'cloud': 'cloud.svg',
+      'typescript': 'typescript.svg',
+      'socket.io': 'socket-io.svg',
+      'css': 'css.svg',
+      'langchain': 'langchain.svg',
+      'llamaindex': 'llamaindex.svg',
+      'chromadb': 'chroma.svg',
+      'shadcn': 'shadcn.png',
+      'gradio': 'gradio.svg',
+      'leetcode': 'leetcode.png'
     }
 
     const fileName = iconMap[topic]
@@ -170,6 +184,27 @@ const Records = () => {
     }
   }
 
+  const openAddModal = () => {
+    setAddModalOpen(true)
+  }
+
+  const closeAddModal = () => {
+    setAddModalOpen(false)
+  }
+
+  const handleAddRecord = (newRecord) => {
+    setRecords(prevRecords => {
+      const updatedRecords = [...prevRecords, newRecord].sort((a, b) => a.day - b.day)
+      // Update topics list
+      const topics = new Set()
+      updatedRecords.forEach(record => {
+        record.topic.forEach(topic => topics.add(topic))
+      })
+      setAllTopics(['All', ...Array.from(topics).sort()])
+      return updatedRecords
+    })
+  }
+
   // Filter records by selected topic
   const filteredRecords = selectedTopic === 'All' 
     ? records 
@@ -210,7 +245,13 @@ const Records = () => {
   return (
     <section className="records">
       <div className="records-container">
-        <h2 className="records-title">Study Records</h2>
+        <div className="records-header">
+          <h2 className="records-title">Study Records</h2>
+          <button className="btn-add-record" onClick={openAddModal}>
+            <Plus size={18} />
+            Add Record
+          </button>
+        </div>
         
         {records.length === 0 ? (
           <div className="no-records">No records found!</div>
@@ -349,6 +390,14 @@ const Records = () => {
           onClose={closeUpdateModal}
           onUpdate={handleRecordUpdate}
           onNext={moveToNextRecord}
+        />
+      )}
+
+      {/* Add Record Modal */}
+      {addModalOpen && (
+        <AddRecord 
+          onClose={closeAddModal}
+          onAdd={handleAddRecord}
         />
       )}
     </section>

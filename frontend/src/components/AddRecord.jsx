@@ -1,38 +1,20 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import axiosInstance from '../api/axiosInstance'
 import { API_CONFIG } from '../config/api.config'
-import { X, Save, Loader2 } from 'lucide-react'
-import './UpdateRecord.css'
+import { X, Plus, Loader2 } from 'lucide-react'
+import './AddRecord.css'
 
-const UpdateRecord = ({ record, onClose, onUpdate, onNext }) => {
+const AddRecord = ({ onClose, onAdd }) => {
   const [formData, setFormData] = useState({
     day: '',
     duration: '',
     date: '',
-    topic: [],
     description: '',
     link: ''
   })
+  const [topicInput, setTopicInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
-  const [topicInput, setTopicInput] = useState('')
-
-  useEffect(() => {
-    if (record) {
-      // Convert ISO date to YYYY-MM-DD format for date input
-      const dateValue = record.date ? new Date(record.date).toISOString().split('T')[0] : ''
-      
-      setFormData({
-        day: record.day,
-        duration: record.duration,
-        date: dateValue,
-        topic: Array.isArray(record.topic) ? record.topic : [record.topic],
-        description: record.description || '',
-        link: record.link || ''
-      })
-      setTopicInput(Array.isArray(record.topic) ? record.topic.join(', ') : record.topic)
-    }
-  }, [record])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -41,28 +23,44 @@ const UpdateRecord = ({ record, onClose, onUpdate, onNext }) => {
       setLoading(true)
       setError(null)
 
-      const updateData = {
+      // Convert HH:MM format to minutes
+      const [hours, minutes] = formData.duration.split(':').map(Number)
+      const totalMinutes = (hours * 60) + minutes
+
+      const newRecord = {
         ...formData,
+        duration: totalMinutes,
         date: new Date(formData.date).toISOString(),
         topic: topicInput.split(',').map(t => t.trim()).filter(t => t)
       }
 
-      const response = await axiosInstance.put(
-        `${API_CONFIG.ENDPOINTS.RECORD}/${record._id}`,
-        updateData
+      const response = await axiosInstance.post(
+        API_CONFIG.ENDPOINTS.RECORD,
+        newRecord
       )
 
       if (response.data.success) {
-        onUpdate(response.data.data)
-        if (onNext) {
-          onNext(record)
-        } else {
-          onClose()
-        }
+        onAdd(response.data.data)
+        
+        // Auto-fill next record with incremented day and date
+        const nextDay = parseInt(formData.day) + 1
+        const nextDate = new Date(formData.date)
+        nextDate.setDate(nextDate.getDate() + 1)
+        const nextDateStr = nextDate.toISOString().split('T')[0]
+        
+        setFormData({
+          day: nextDay,
+          duration: '',
+          date: nextDateStr,
+          description: '',
+          link: ''
+        })
+        setTopicInput('')
+        setError(null)
       }
     } catch (err) {
-      setError(err.response?.data?.error || 'Failed to update record')
-      console.error('Error updating record:', err)
+      setError(err.response?.data?.error || 'Failed to create record')
+      console.error('Error creating record:', err)
     } finally {
       setLoading(false)
     }
@@ -77,16 +75,16 @@ const UpdateRecord = ({ record, onClose, onUpdate, onNext }) => {
   }
 
   return (
-    <div className="update-modal-overlay" onClick={onClose}>
-      <div className="update-modal-content" onClick={(e) => e.stopPropagation()}>
-        <div className="update-modal-header">
-          <h2>Update Record - Day {record?.day}</h2>
-          <button className="update-modal-close" onClick={onClose}>
+    <div className="add-modal-overlay" onClick={onClose}>
+      <div className="add-modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="add-modal-header">
+          <h2>Add New Record</h2>
+          <button className="add-modal-close" onClick={onClose}>
             <X size={20} />
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="update-form">
+        <form onSubmit={handleSubmit} className="add-form">
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="day">Day</label>
@@ -98,20 +96,23 @@ const UpdateRecord = ({ record, onClose, onUpdate, onNext }) => {
                 onChange={handleChange}
                 required
                 min="1"
+                placeholder="1"
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="duration">Duration (minutes)</label>
+              <label htmlFor="duration">Duration (HH:MM)</label>
               <input
-                type="number"
+                type="text"
                 id="duration"
                 name="duration"
                 value={formData.duration}
                 onChange={handleChange}
                 required
-                min="1"
+                placeholder="01:30"
+                pattern="[0-9]{1,2}:[0-5][0-9]"
               />
+              <small>Enter time in hours:minutes format (e.g., 01:30 for 1 hour 30 minutes)</small>
             </div>
           </div>
 
@@ -177,12 +178,12 @@ const UpdateRecord = ({ record, onClose, onUpdate, onNext }) => {
               {loading ? (
                 <>
                   <Loader2 className="spin-icon" size={18} />
-                  Saving...
+                  Creating...
                 </>
               ) : (
                 <>
-                  <Save size={18} />
-                  Save Changes
+                  <Plus size={18} />
+                  Add Record
                 </>
               )}
             </button>
@@ -193,4 +194,4 @@ const UpdateRecord = ({ record, onClose, onUpdate, onNext }) => {
   )
 }
 
-export default UpdateRecord
+export default AddRecord

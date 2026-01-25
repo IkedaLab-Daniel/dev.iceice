@@ -9,11 +9,39 @@
   margin: 0 auto;
 }
 
+.records-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 .records-title {
   font-size: clamp(2rem, 4vw, 2.5rem);
   color: #6bb5ff;
-  margin-bottom: 32px;
-  text-align: center;
+  margin: 0;
+}
+
+.btn-add-record {
+  background: #6bb5ff;
+  color: #0f1724;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-add-record:hover {
+  background: #5aa3e8;
+  transform: translateY(-2px);
 }
 
 .filters {

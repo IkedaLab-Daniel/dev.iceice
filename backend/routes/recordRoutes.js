@@ -10,7 +10,7 @@ const { protect } = require('../middlewares/authMiddleware');
 const router = express.Router();
 
 // @route   /api/records
-router.route('/').get(getRecords).post(protect, createRecord);
+router.route('/').get(getRecords).post(createRecord);
 
 // @route   /api/records/:id
 router

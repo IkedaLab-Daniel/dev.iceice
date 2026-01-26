@@ -8109,4 +8109,15 @@
   "topic": ["react", "css", "leetcode"],
   "description": "Joined the LeetCode Weekly Contest, then continued my MERN project in the evening for tracking study progress. It’s done for now, but I’ll keep refining it as better design ideas come up 📚📚",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7599448081272196360?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f5d93756164ac6aae8"
+  },
+  "day": 391,
+  "duration": 240,
+  "date": "2026-01-25T16:00:00.000Z",
+  "topic": ["mongodb", "node", "express", "leetcode"],
+  "description": "MongoDB review for certification, LESS GOOO!! 🍃💥",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7599785818739313928?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

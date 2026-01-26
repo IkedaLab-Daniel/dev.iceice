@@ -48,7 +48,7 @@ const Statistics = ({ records: recordsProp = [] }) => {
 
           <div className="stat-card">
             <div className="top">
-                <span>Total Duration</span>
+                <span>Total Time</span>
                 <Clock className='icon' />
             </div>
 

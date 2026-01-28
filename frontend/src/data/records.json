@@ -8120,4 +8120,15 @@
   "topic": ["mongodb", "node", "express", "leetcode"],
   "description": "MongoDB review for certification, LESS GOOO!! 🍃💥",
   "link": "https://www.tiktok.com/@dev.iceice/video/7599785818739313928?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f5d93754164ac6aae0"
+  },
+  "day": 392,
+  "duration": 203,
+  "date": "2026-01-26T16:00:00.000Z",
+  "topic": ["mongodb", "leetcode"],
+  "description": "MongoDB Review 🍃",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7600160929938017554?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

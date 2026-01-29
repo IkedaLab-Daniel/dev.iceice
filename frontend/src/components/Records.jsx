@@ -132,7 +132,8 @@ const Records = () => {
       'chromadb': 'chroma.svg',
       'shadcn': 'shadcn.png',
       'gradio': 'gradio.svg',
-      'leetcode': 'leetcode.png'
+      'leetcode': 'leetcode.png',
+      'googlecloud': 'google_cloud-icon.svg'
     }
 
     const fileName = iconMap[topic]

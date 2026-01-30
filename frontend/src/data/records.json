@@ -8153,4 +8153,15 @@
   "topic": ["googlecloud", "ai", "mongodb", "leetcode"],
   "description": "Attended the Google Cloud Digital Event today but didn’t add it to the post since it was mostly Cloud + AI + Data Science 📚📚\n\nLeetCode highlight: I finally used the debugger instead of spamming console.log (personal growth) 😅\nEnded the night studying MongoDB for the exam… now the real challenge is finding a quiet, decent room to actually take it 🥲🥲",
   "link": "https://www.tiktok.com/@dev.iceice/video/7600916358506794258?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aae3"
+  },
+  "day": 395,
+  "duration": 262,
+  "date": "2026-01-29T16:00:00.000Z",
+  "topic": ["mongodb", "leetcode"],
+  "description": "MongoDB grind today. Tomorrow’s the exam… send indexes and good luck 🥶",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7601255599388609810?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

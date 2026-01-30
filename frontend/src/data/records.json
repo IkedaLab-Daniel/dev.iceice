@@ -8140,6 +8140,17 @@
   "duration": 372,
   "date": "2026-01-27T16:00:00.000Z",
   "topic": ["googlecloud", "ai", "mongodb", "leetcode"],
-  "description": "MongoDB Review 🍃",
-  "link": "https://www.tiktok.com/@dev.iceice/video/7600160929938017554?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+  "description": "Google Cloud Digital Event was 🔥🔥\nCompleted 4 LiveLabs and learned a ton about Agentic AI and Google’s emerging AI tech. Didn’t record the whole session though, as labs were breaking left and right due to heavy traffic, and watching me stare at talks wouldn’t be that exciting anyway 😅\nStill, massive W of an event\n🖐️😐🖐️",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7600535131836714258?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aae2"
+  },
+  "day": 394,
+  "duration": 266,
+  "date": "2026-01-28T16:00:00.000Z",
+  "topic": ["googlecloud", "ai", "mongodb", "leetcode"],
+  "description": "Attended the Google Cloud Digital Event today but didn’t add it to the post since it was mostly Cloud + AI + Data Science 📚📚\n\nLeetCode highlight: I finally used the debugger instead of spamming console.log (personal growth) 😅\nEnded the night studying MongoDB for the exam… now the real challenge is finding a quiet, decent room to actually take it 🥲🥲",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7600916358506794258?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

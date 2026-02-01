@@ -8164,4 +8164,15 @@
   "topic": ["mongodb", "leetcode"],
   "description": "MongoDB grind today. Tomorrow’s the exam… send indexes and good luck 🥶",
   "link": "https://www.tiktok.com/@dev.iceice/video/7601255599388609810?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aae4"
+  },
+  "day": 396,
+  "duration": 120,
+  "date": "2026-01-30T16:00:00.000Z",
+  "topic": ["mongodb", "leetcode"],
+  "description": "ProctorU, after I showed you every corner of my room, WHYYY!?? 😭",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7601707238373313800?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

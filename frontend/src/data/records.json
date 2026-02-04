@@ -8186,4 +8186,15 @@
   "topic": ["leetcode"],
   "description": "Perfect 1 hour today - pure LeetCode. Joined the weekly contest and actually cooked a medium question, and it felt surprisingly easy since it was more practical system logic instead of tricky math 🗿👌\nGot busy the rest of the afternoon and evening, so I had to cancel my React practice, but 1 solid hour of LeetCode still counts as progress 📚✨",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7602098544820129031?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aae6"
+  },
+  "day": 398,
+  "duration": 85,
+  "date": "2026-02-01T16:00:00.000Z",
+  "topic": ["leetcode", "react"],
+  "description": "LeetCode practice, then added new features to an old project. Really glad I coded it modularly, that updating and extending features was way easier this time. Past me finally did something right ✅",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7602644019054759175?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

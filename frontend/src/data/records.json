@@ -8197,4 +8197,15 @@
   "topic": ["leetcode", "react"],
   "description": "LeetCode practice, then added new features to an old project. Really glad I coded it modularly, that updating and extending features was way easier this time. Past me finally did something right ✅",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7602644019054759175?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aae7"
+  },
+  "day": 399,
+  "duration": 120,
+  "date": "2026-02-02T16:00:00.000Z",
+  "topic": ["leetcode", "cloud"],
+  "description": "Leetcode practice. Refactor some UI part for the project. Deployed the client on Netlify, then AWS EC2 for the server enforcing HTTPS 📚🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7602813970063379730?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

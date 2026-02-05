@@ -8208,4 +8208,15 @@
   "topic": ["leetcode", "cloud"],
   "description": "Leetcode practice. Refactor some UI part for the project. Deployed the client on Netlify, then AWS EC2 for the server enforcing HTTPS 📚🔥",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7602813970063379730?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aae8"
+  },
+  "day": 400,
+  "duration": 135,
+  "date": "2026-02-03T16:00:00.000Z",
+  "topic": ["leetcode", "node", "express"],
+  "description": "Nothing super special, just 1 hour of LeetCode, then spent the evening learning how to integrate payment gateway with Node + Express. Been feeling tired lately, still adjusting to college life 😴😴",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7603206552375397640?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

@@ -8219,4 +8219,15 @@
   "topic": ["leetcode", "node", "express"],
   "description": "Nothing super special, just 1 hour of LeetCode, then spent the evening learning how to integrate payment gateway with Node + Express. Been feeling tired lately, still adjusting to college life 😴😴",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7603206552375397640?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aae9"
+  },
+  "day": 401,
+  "duration": 130,
+  "date": "2026-02-04T16:00:00.000Z",
+  "topic": ["leetcode", "react", "css"],
+  "description": "Been thinking about this project for a while, but the architecture is complex and I didn’t even know where to start. Then I realized, nothing gets built if I just think. So I started with the frontend. Quick skill check too: built it with zero AI and confirmed I can definitely still cook React and CSS 😌🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7603591699679497490?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

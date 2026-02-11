@@ -8263,4 +8263,15 @@
   "topic": ["leetcode", "react", "node", "express", "mongodb", "python"],
   "description": "LeetCode contest today: Only solved 1 problem 🥲\nNot the result I wanted, but definitely the signal I needed. Time to be more structured. From now on, every day at least:\n- 1 LeetCode problem\n- 1 hour building/practice\n- 1 hour learning concepts",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7604867684685253906?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aas3"
+  },
+  "day": 405,
+  "duration": 130,
+  "date": "2026-02-08T16:00:00.000Z",
+  "topic": ["leetcode", "python"],
+  "description": "Yesterday’s study structure didn’t fully work out today 😅 Only managed 1 hour of LeetCode and 1 hour of Agentic AI concepts/practice. Had a pretty busy day, being outdoors drained me a lot, but it was fun.",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7605240056848125202?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

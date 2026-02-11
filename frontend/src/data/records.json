@@ -8274,4 +8274,15 @@
   "topic": ["leetcode", "python"],
   "description": "Yesterday’s study structure didn’t fully work out today 😅 Only managed 1 hour of LeetCode and 1 hour of Agentic AI concepts/practice. Had a pretty busy day, being outdoors drained me a lot, but it was fun.",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7605240056848125202?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aas4"
+  },
+  "day": 406,
+  "duration": 120,
+  "date": "2026-02-09T16:00:00.000Z",
+  "topic": ["leetcode", "react", "node", "express", "mongodb", "css"],
+  "description": "This week’s packed with events, so my self-study plan hasn’t been perfectly followed. Today was just a few LeetCode solves and a small attempt at a simple project. Adjusting, not quitting 🔥🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7605607945518271751?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

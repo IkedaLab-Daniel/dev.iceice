@@ -8307,4 +8307,15 @@
   "topic": ["leetcode", "python", "js"],
   "description": "Had a busy day but still managed to study/practice for 4 hours. Most limits are just in the mind 📚📚",
   "link": "https://www.tiktok.com/@dev.iceice/video/7606225775884356882?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aas7"
+  },
+  "day": 409,
+  "duration": 240,
+  "date": "2026-02-12T16:00:00.000Z",
+  "topic": ["leetcode", "python", "github"],
+  "description": "LeetCode, Agentic AI grind, and Git review tonight. Been using the debugger a lot these past few days, so much better than console logs everywhere. Highly recommend leveling up that skill 🔥🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7606601918609198354?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

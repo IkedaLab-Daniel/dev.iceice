@@ -18,9 +18,7 @@ const CalendarPage = () => {
   }))
 
   return (
-    <div className="calendar-page">
-      <Header />
-      
+    <div className="calendar-page">    
       <div className="calendar-page-container">
         <div className="calendar-page-header">
           <button className="btn-back" onClick={() => navigate('/')}>

@@ -8318,4 +8318,15 @@
   "topic": ["leetcode", "python", "github"],
   "description": "LeetCode, Agentic AI grind, and Git review tonight. Been using the debugger a lot these past few days, so much better than console logs everywhere. Highly recommend leveling up that skill 🔥🔥",
   "link": "https://www.tiktok.com/@dev.iceice/video/7606784855749315847?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aas8"
+  },
+  "day": 410,
+  "duration": 240,
+  "date": "2026-02-13T16:00:00.000Z",
+  "topic": ["leetcode", "python", "github"],
+  "description": "Pretty disappointed with tonight’s LeetCode contest. Solved the Easy, but it took me half an hour. Couldn’t fully grasp the Medium at first and had to ask ChatGPT to explain it clearly. Still, it was a good night overall; made solid progress learning Agentic AI 🔥🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7607077273388338450?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

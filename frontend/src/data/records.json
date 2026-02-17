@@ -8340,4 +8340,15 @@
   "topic": ["leetcode", "python"],
   "description": "LeetCode Easy felt Hard today, first time dealing with a Binary problem 😅\nThen switched gears to a hands-on lab building Agentic AI with manual tool calling (less abstraction). Super fun seeing the whole flow come together to the final result 🔥🔥",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7607196884301581575?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aaq0"
+  },
+  "day": 412,
+  "duration": 185,
+  "date": "2026-02-15T16:00:00.000Z",
+  "topic": ["leetcode", "python"],
+  "description": "LeetCode + Agentic AI grind tonight. Originally planned just 2 hours and the rest for college readings, but finished the readings earlier than expected, so I squeezed in an extra hour of Agentic AI 🔥🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7607751135339891986?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

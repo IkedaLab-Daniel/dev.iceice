@@ -8362,4 +8362,15 @@
   "topic": ["leetcode", "python"],
   "description": "Solved a LeetCode problem, then went back to the Agentic AI grind. Tonight’s mission: data science tools for agents and building a MySQL agent. Didn’t finish it, but now my brain is officially in ‘unfinished business’ mode -> free motivation for tomorrow 🔥💀",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7608080924454014226?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aaq2"
+  },
+  "day": 414,
+  "duration": 240,
+  "date": "2026-02-17T16:00:00.000Z",
+  "topic": ["leetcode", "python"],
+  "description": "Leveling up from LangChain to LangGraph. Also realized today that “AI Agent” and “Agentic AI” aren’t the same thing. The deeper I dig, the more I see how wide this field really is, and how much more there is to learn 📚🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7608324383223958792?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

@@ -8395,4 +8395,15 @@
   "topic": ["leetcode", "python"],
   "description": "Spent 2 hours on LeetCode and LangGraph concepts/practice, then had to dive into college stuff in the evening. Busy day 🔥🔥",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7609223557352148231?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aaq5"
+  },
+  "day": 417,
+  "duration": 314,
+  "date": "2026-02-20T16:00:00.000Z",
+  "topic": ["leetcode", "python", "laravel", "react"],
+  "description": "LangGraph grind tonight! Learned the concepts and practiced Reflection & Reflextion workflows. This framework is getting really exciting. Can’t wait to finish the whole course, tomorrow I will add AI Agent features to my previous projects! 🔥🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7609613584938667272?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

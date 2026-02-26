@@ -8439,4 +8439,15 @@
   "topic": ["leetcode", "flask", "laravel", "react", "tailwind"],
   "description": "Midnight dive as usual. 12 MN to 4 AM is still my peak power window, even though life keeps getting busier. Tonight was focused on building the AI Agent, and debugging was actually fun because it’s just cool watching every line execute step by step in the debugger ♥️",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7610810227780308231?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aaq9"
+  },
+  "day": 421,
+  "duration": 120,
+  "date": "2026-02-24T16:00:00.000Z",
+  "topic": ["leetcode", "googlecloud", "firestore"],
+  "description": "Busy day today, so only had a few hours to study. Switched from the Agentic AI project to Google Cloud because I suddenly realized my free credits are about to expire 💀 Nothing motivates learning like "use it before it disappears." 🥲👋 Also started exploring Firestore, trying to deploy a client-only site that somehow still has a database like magic ✨📚🤯🤯🤯",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7611180873060207879?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

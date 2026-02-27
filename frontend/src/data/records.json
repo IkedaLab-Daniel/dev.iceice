@@ -8450,4 +8450,15 @@
   "topic": ["leetcode", "googlecloud", "firestore"],
   "description": "Busy day today, so only had a few hours to study. Switched from the Agentic AI project to Google Cloud because I suddenly realized my free credits are about to expire 💀 Nothing motivates learning like \"Use it before it disappears.\" 🥲👋 Also started exploring Firestore, trying to deploy a client-only site that somehow still has a database like magic ✨📚🤯🤯🤯",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7611180873060207879?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aax0"
+  },
+  "day": 422,
+  "duration": 125,
+  "date": "2026-02-25T16:00:00.000Z",
+  "topic": ["leetcode", "python", "langchain"],
+  "description": "Exhausted tonight, but I still showed up. 2 hours on AI ReAct Agent practice and concepts. This isn’t just skill-building anymore, it’s discipline training 🔥📚✨⏰",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7611576330517335303?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

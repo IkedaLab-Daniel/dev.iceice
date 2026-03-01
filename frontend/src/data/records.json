@@ -8461,4 +8461,15 @@
   "topic": ["leetcode", "python", "langchain"],
   "description": "Exhausted tonight, but I still showed up. 2 hours on AI ReAct Agent practice and concepts. This isn’t just skill-building anymore, it’s discipline training 🔥📚✨⏰",
   "link": "https://www.tiktok.com/@dev.iceice/video/7611576330517335303?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aax1"
+  },
+  "day": 423,
+  "duration": 120,
+  "date": "2026-02-26T16:00:00.000Z",
+  "topic": ["leetcode", "python", "langchain", "langgraph"],
+  "description": "Super tired today 💀\nPlanned to just do the minimum 1 hour tonight, but the topic got interesting and I accidentally extended it to 2 hours. My body clock is officially cooked… but progress is progress 🔥🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7611934181408460050?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

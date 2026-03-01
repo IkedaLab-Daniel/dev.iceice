@@ -134,7 +134,8 @@ const Records = () => {
       'gradio': 'gradio.svg',
       'leetcode': 'leetcode.png',
       'googlecloud': 'google_cloud-icon.svg',
-      'firestore': 'firestore.png'
+      'firestore': 'firestore.png',
+      'langgraph': 'langgraph.png'
     }
 
     const fileName = iconMap[topic]

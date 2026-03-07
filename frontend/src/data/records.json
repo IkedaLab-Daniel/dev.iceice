@@ -8527,4 +8527,15 @@
   "topic": ["leetcode", "python", "langchain", "langgraph", "react", "css"],
   "description": "React progress, Agentic RAG mini-project completed. Tried doing some networking practice with Packet Tracer too… and realized I still have a lot to learn there 😭",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7613417076614581512?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aax7"
+  },
+  "day": 429,
+  "duration": 90,
+  "date": "2026-03-04T16:00:00.000Z",
+  "topic": ["leetcode", "django"],
+  "description": "Probably my most draining day this March 🪫🪫\nStill, I got out of my bed, then did a LeetCode problem to further torture my brain. Then, I completed old Django Labs to review the framework 📚⏰",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7614011539565186312?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

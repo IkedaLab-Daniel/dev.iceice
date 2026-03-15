@@ -8600,8 +8600,19 @@
   },
   "day": 435,
   "duration": 125,
-  "date": "2026-03-09T16:00:00.000Z",
+  "date": "2026-03-10T16:00:00.000Z",
   "topic": ["leetcode", "django"],
   "description": "Another late post. Toothache upgraded to a full headache today 💀 Still managed to solve a LeetCode problem and practice Django Models, ModelForms, and templating 📚📚",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7616540143041662216?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6abg4"
+  },
+  "day": 436,
+  "duration": 90,
+  "date": "2026-03-11T16:00:00.000Z",
+  "topic": ["leetcode", "django"],
+  "description": "Busy day with college work, so just a quick 1.5-hour session tonight. Solved a LeetCode problem and practiced Django 📚📚",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7616738778480119047?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

@@ -8549,4 +8549,15 @@
   "topic": ["leetcode", "react", "tailwind", "cloud"],
   "description": "Built a Capture the Flag website today along with a sample target environment 😈\n\nUsed shadcn for rapid development since I had to finish it within the day. Tailwind setup gave me the usual headaches, but once Copilot helped me get it running, everything went smooth, and honestly, pretty fun 📚⏰",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7614632909181406472?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6aax9"
+  },
+  "day": 431,
+  "duration": 89,
+  "date": "2026-03-06T16:00:00.000Z",
+  "topic": ["leetcode", "django"],
+  "description": "Had a really exhausting day, so tonight was just a short Django review and practice session. Keeping the momentum going 🔥⏰",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7614894298319932679?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

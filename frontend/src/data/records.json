@@ -8571,4 +8571,15 @@
   "topic": ["leetcode", "django"],
   "description": "Quick study session today (late post). Been dealing with an annoying toothache that made it hard to focus, but still managed to squeeze in some practice 📚📚",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7615500558446644498?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6abg1"
+  },
+  "day": 433,
+  "duration": 120,
+  "date": "2026-03-08T16:00:00.000Z",
+  "topic": ["leetcode", "react", "css"],
+  "description": "Another day with my crazy toothache, but still managed 2 hours of study. Imagine the grind once I’m not fighting my own teeth anymore 🔥🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7615506368023285000?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

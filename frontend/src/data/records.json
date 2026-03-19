@@ -8643,9 +8643,20 @@
     "$oid": "697621f6d93754164ac6abg7"
   },
   "day": 439,
-  "duration": 90,
+  "duration": 60,
   "date": "2026-03-14T16:00:00.000Z",
   "topic": ["leetcode", "django"],
   "description": "Quick 1-hour session tonight. One Easy LeetCode solved and some Django DRF practice. The rest of the day was family time. W Sunday 🔥",
   "link": "https://www.tiktok.com/@dev.iceice/video/7617850354893425928?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6abg8"
+  },
+  "day": 440,
+  "duration": 120,
+  "date": "2026-03-15T16:00:00.000Z",
+  "topic": ["leetcode", "react", "node", "express", "mongodb"],
+  "description": "Finally woke up pain-free today! No meds needed 🙏 However, I've been busy with college and freelance stuffs. Still, I was able to locked in a 2-hour session tonight: LeetCode and MERN project 📚📚",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7618237727296785672?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

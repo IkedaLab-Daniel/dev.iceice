@@ -8637,4 +8637,15 @@
   "topic": ["django"],
   "description": "Had trouble with my phone’s charging port so I had to timelapse the session using screen recording instead. Not sure yet, but this format might actually be better. Practiced Django REST tonight—I still remember the concepts, just not the exact syntax and modules. VSCode IntelliSense also refused to cooperate, but progress is progress 📚🔥",
   "link": "https://www.tiktok.com/@dev.iceice/video/7617769853008661768?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6abg7"
+  },
+  "day": 439,
+  "duration": 90,
+  "date": "2026-03-14T16:00:00.000Z",
+  "topic": ["leetcode", "django"],
+  "description": "Quick 1-hour session tonight. One Easy LeetCode solved and some Django DRF practice. The rest of the day was family time. W Sunday 🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7617850354893425928?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

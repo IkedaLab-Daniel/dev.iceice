@@ -8626,4 +8626,15 @@
   "topic": ["leetcode", "react", "tailwind", "node", "express", "mongodb"],
   "description": "Another midnight grind. Been in an unstable state the past few days and couldn’t work on the important stuff, so tonight I had to rush a demo project for tomorrow’s presentation (while running on about 2 hours of sleep)💀\n\nOn the bright side, I finally found a painkiller that actually works 💊 Felt like discovering the exact module that fixes a code bug 📚📚",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7617517110125792530?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6abg6"
+  },
+  "day": 438,
+  "duration": 90,
+  "date": "2026-03-13T16:00:00.000Z",
+  "topic": ["django"],
+  "description": "Had trouble with my phone’s charging port so I had to timelapse the session using screen recording instead. Not sure yet, but this format might actually be better. Practiced Django REST tonight—I still remember the concepts, just not the exact syntax and modules. VSCode IntelliSense also refused to cooperate, but progress is progress 📚🔥",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7617769853008661768?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

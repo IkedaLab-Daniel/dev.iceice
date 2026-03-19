@@ -8670,4 +8670,15 @@
   "topic": ["leetcode", "django"],
   "description": "Busy day today. Had to fight my social anxiety to negotiate college-related stuff in the real world. Not easy, but I kinda did it. Still managed a quick 2-hour session: LeetCode + Django DRF review (pagination & rate limiting) 📚📚",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7618619690914434322?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6asb0"
+  },
+  "day": 442,
+  "duration": 115,
+  "date": "2026-03-17T16:00:00.000Z",
+  "topic": ["mongodb"],
+  "description": "Probably one of the busiest days of March so far. For tonight’s session, I attended a MongoDB webinar about RAG 🔥\n\nMostly watched to unwind after a hectic day, but it was really nice. MongoDB is my favorite database, and learning how it can be used for RAG was super exciting 📚📚",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7618937423304592648?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

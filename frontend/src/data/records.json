@@ -8659,4 +8659,15 @@
   "topic": ["leetcode", "react", "node", "express", "mongodb"],
   "description": "Finally woke up pain-free today! No meds needed 🙏 However, I've been busy with college and freelance stuffs. Still, I was able to locked in a 2-hour session tonight: LeetCode and MERN project 📚📚",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7618237727296785672?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6abg9"
+  },
+  "day": 441,
+  "duration": 120,
+  "date": "2026-03-16T16:00:00.000Z",
+  "topic": ["leetcode", "django"],
+  "description": "Busy day today. Had to fight my social anxiety to negotiate college-related stuff in the real world. Not easy, but I kinda did it. Still managed a quick 2-hour session: LeetCode + Django DRF review (pagination & rate limiting) 📚📚",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7618619690914434322?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

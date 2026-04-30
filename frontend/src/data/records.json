@@ -8681,4 +8681,15 @@
   "topic": ["mongodb"],
   "description": "Probably one of the busiest days of March so far. For tonight’s session, I attended a MongoDB webinar about RAG 🔥\n\nMostly watched to unwind after a hectic day, but it was really nice. MongoDB is my favorite database, and learning how it can be used for RAG was super exciting 📚📚",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7618937423304592648?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6asb1"
+  },
+  "day": 443,
+  "duration": 193,
+  "date": "2026-03-18T16:00:00.000Z",
+  "topic": ["cloud"],
+  "description": "Today’s session was pretty chill 🍿\nAttended a Microsoft virtual training on building Agentic AI solutions with Azure 🔥🔥\n\nWould’ve been more fun if I could follow along, but my card kept getting denied 💀💀\nStill a win though, as I secured a 50% certification exam voucher 📚📚",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7619656037821467912?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

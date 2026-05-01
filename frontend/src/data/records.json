@@ -8692,4 +8692,15 @@
   "topic": ["cloud"],
   "description": "Today’s session was pretty chill 🍿\nAttended a Microsoft virtual training on building Agentic AI solutions with Azure 🔥🔥\n\nWould’ve been more fun if I could follow along, but my card kept getting denied 💀💀\nStill a win though, as I secured a 50% certification exam voucher 📚📚",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7619656037821467912?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6asb2"
+  },
+  "day": 444,
+  "duration": 126,
+  "date": "2026-03-19T16:00:00.000Z",
+  "topic": ["cloud"],
+  "description": "Google Cloud - Gemini practice labs 📚📚",
+  "link": "https://www.tiktok.com/@dev.iceice/video/7620071445116308743?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

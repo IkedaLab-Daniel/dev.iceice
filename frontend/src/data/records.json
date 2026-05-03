@@ -8781,4 +8781,15 @@
   "topic": ["python", "ai"],
   "description": "Agentic AI grind is back! Worked on a lab from the IBM course. Also, slight confession… I’ve been a bit addicted to chess lately, so my study sessions have been taking some hits 😭📚",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7622462542316686610?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6asc0"
+  },
+  "day": 452,
+  "duration": 90,
+  "date": "2026-03-27T16:00:00.000Z",
+  "topic": ["python", "langgraph"],
+  "description": "Quick study and practice session tonight. All about building a multi-agent AI workflow using Python: LangGraph 📚📚",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7622462542316686610?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

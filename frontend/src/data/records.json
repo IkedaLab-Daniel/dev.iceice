@@ -8725,4 +8725,15 @@
   "topic": ["cloud"],
   "description": "Completed a Google Cloud Lab tonight. Explored the Google Agent SDK! I really like the built-in web interface, very Django-admin vibes. Hit some credential issues, but got it done 🤯🔥",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7620469054200892690?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6asb5"
+  },
+  "day": 447,
+  "duration": 133,
+  "date": "2026-03-21T16:00:00.000Z",
+  "topic": ["django"],
+  "description": "Late post. Sick and midterm week hitting hard, but the grind continues—Django REST authentication practice done 📚📚",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7621211315217943815?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

@@ -8761,7 +8761,7 @@
 },
 {
   "_id": {
-    "$oid": "697621f6d93754164ac6asb7"
+    "$oid": "697621f6d93754164ac6asb8"
   },
   "day": 450,
   "duration": 120,
@@ -8769,4 +8769,16 @@
   "topic": ["python", "ai"],
   "description": "Back to LangGraph practice, learning how to build well-designed multi-agent systems. This time I’m taking it slow, soaking in every detail and explaining things to myself so it actually sticks long-term 📚📚",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7621951272622509320?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6asb9"
+  },
+  "day": 451,
+  "duration": 124,
+  "date": "2026-03-26T16:00:00.000Z",
+  "topic": ["python", "ai"],
+  "description": "Agentic AI grind is back! Worked on a lab from the IBM course. Also, slight confession… I’ve been a bit addicted to chess lately, so my study sessions have been taking some hits 😭📚",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7622462542316686610?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

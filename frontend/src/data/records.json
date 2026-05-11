@@ -8758,4 +8758,15 @@
   "topic": ["python", "ai"],
   "description": "Feeling a bit better than yesterday, but still recovering. Skipped Django tonight and focused on AI agents. The concepts were a bit overwhelming, so I decided to continue the lab tomorrow 📚📚",
   "link": "https://www.tiktok.com/@dev.iceice/video/7621572131209399570?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6asb7"
+  },
+  "day": 450,
+  "duration": 120,
+  "date": "2026-03-25T16:00:00.000Z",
+  "topic": ["python", "ai"],
+  "description": "Back to LangGraph practice, learning how to build well-designed multi-agent systems. This time I’m taking it slow, soaking in every detail and explaining things to myself so it actually sticks long-term 📚📚",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7621951272622509320?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]

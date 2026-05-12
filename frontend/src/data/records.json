@@ -8803,4 +8803,15 @@
   "topic": ["react", "tailwind"],
   "description": "React + Tailwind practice tonight. Built a chess-themed portfolio for a friend. Learning chess under someone better really is the fastest way to improve ♟️",
   "link": "https://www.tiktok.com/@dev.iceice/photo/7623361324696734994?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
+},
+{
+  "_id": {
+    "$oid": "697621f6d93754164ac6asc2"
+  },
+  "day": 454,
+  "duration": 180,
+  "date": "2026-03-29T16:00:00.000Z",
+  "topic": ["react", "tailwind", "langgraph"],
+  "description": "Tonight’s session: completed the chess-themed portfolio, made some updates to another commissioned project, then went back to Agentic AI practice with LangGraph. Solid progress across the board 🔥😎📚",
+  "link": "https://www.tiktok.com/@dev.iceice/photo/7623547708619361544?is_from_webapp=1&sender_device=pc&web_id=7584477858178221586"
 }]
